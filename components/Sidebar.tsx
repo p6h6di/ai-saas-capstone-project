@@ -6,8 +6,8 @@ import {
   Code,
   ImageIcon,
   LayoutDashboard,
-  //   MessageSquare,
-  //   Music,
+  MessageSquare,
+  Music,
   VideoIcon,
   CreditCardIcon,
 } from "lucide-react";
@@ -23,6 +23,11 @@ const routes = [
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
+  },
+  {
+    label: "Conversation",
+    icon: MessageSquare,
+    href: "/conversation",
   },
 
   {
@@ -41,6 +46,12 @@ const routes = [
     icon: Code,
     href: "/code",
   },
+  {
+    label: "Music Generation",
+    icon: Music,
+    href: "/music",
+  },
+
   {
     label: "Billing",
     icon: CreditCardIcon,
@@ -61,14 +72,11 @@ export const Sidebar = ({
     <div className="flex h-full flex-col space-y-4 bg-black py-4 text-white">
       <div className="flex-1 px-3 py-2">
         <Link href="/dashboard" className="mb-14 flex items-center pl-3">
-          {/* <div className="relative mr-4 size-8">
-            <Image fill alt="Logo" src="/logo.png" />
-          </div> */}
           <h1 className={cn("text-4xl font-bold", poppins.className)}>
             Spark Mind
           </h1>
         </Link>
-        <div className="space-y-1">
+        <div className="space-y-2">
           {routes.map((route) => (
             <Link
               key={route.href}
